@@ -7,9 +7,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.dalingge.awesome.R;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import com.dalingge.awesome.R;
 
 /**
  * FileName:BaseActivity.java
@@ -69,7 +71,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
             if (isBack()) {
                 getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-                //setTitle(getIntent().getExtras().getString("title"));
+                setTitle(getIntent().getExtras().getString("title"));
             }
         }
     }

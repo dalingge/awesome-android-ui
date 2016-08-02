@@ -12,20 +12,23 @@
             android:name=".activity.MainActivity"
             android:theme="@style/AppTheme.ExplodeContent">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.ViewPagerActivity"/>
-        <activity android:name=".activity.PullPagerActivity"/>
-        <activity android:name=".activity.BottomBarActivity"/>
-        <activity android:name=".activity.TextMoreActivity"/>
-        <activity android:name=".activityoptions.activity.MainOptionsActivity"/>
+        <activity android:name=".activity.ViewPagerActivity" />
+        <activity android:name=".activity.PullPagerActivity" />
+        <activity android:name=".activity.BottomBarActivity" />
+        <activity android:name=".activity.TextMoreActivity" />
+        <activity android:name=".activityoptions.activity.MainOptionsActivity" />
         <activity
             android:name=".activityoptions.activity.TargetActivity"
-            android:theme="@style/TranslucentTheme"/>
+            android:theme="@style/TranslucentTheme" />
         <activity android:name=".transitionseverywhere.MainTransitionsActivity" />
+        <activity android:name=".activity.ImageViewActivity" />
+        <activity android:name=".activity.ViewTouchActivity" />
+        <activity android:name=".activity.HandlerActivity"></activity>
     </application>
 
 </manifest>

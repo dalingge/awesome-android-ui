@@ -10,17 +10,28 @@ import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import butterknife.Bind;
+
 import com.dalingge.awesome.R;
 import com.dalingge.awesome.activityoptions.activity.MainOptionsActivity;
 import com.dalingge.awesome.adapter.MainAdapter;
 import com.dalingge.awesome.transitionseverywhere.MainTransitionsActivity;
 
+import butterknife.Bind;
+
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
 
-    private String[] strings ={"有间隔的滑动切换图片","上下滑动跟随到图片浏览","底部导航栏","展示更多文字","Options的动画实现兼容","Transitions的动画实现兼容"};
-    private Class[] classes={ViewPagerActivity.class,PullPagerActivity.class, BottomBarActivity.class,TextMoreActivity.class,
+    private String[] strings ={
+            "主线程与子线程的交互",
+            "view事件分发机制",
+            "imageview学习",
+            "有间隔的滑动切换图片",
+            "上下滑动跟随到图片浏览",
+            "底部导航栏",
+            "展示更多文字",
+            "Options的动画实现兼容",
+            "Transitions的动画实现兼容"};
+    private Class[] classes={HandlerActivity.class,ViewTouchActivity.class,ImageViewActivity.class,ViewPagerActivity.class,PullPagerActivity.class, BottomBarActivity.class,TextMoreActivity.class,
         MainOptionsActivity.class, MainTransitionsActivity.class};
 
     @Bind(R.id.recycler_view_team) RecyclerView recyclerViewTeam;
@@ -50,6 +61,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             intent.putExtra("title",strings[(Integer) view.getTag()]);
             if (Build.VERSION.SDK_INT >=Build.VERSION_CODES.LOLLIPOP) {
                 startActivityLollipop (view,intent);
+                startActivity(intent);
             }else {
                 startActivityGingerBread(view, intent);
             }
@@ -80,5 +92,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     @Override public void onClick(View v) {
 
     }
+
+
 
 }

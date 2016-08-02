@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
     <android.support.design.widget.AppBarLayout
-        android:id="@+id/appbatlayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay"
@@ -19,20 +18,24 @@
             app:elevation="@dimen/default_elevation"
             app:popupTheme="@style/AppTheme.PopupOverlay"/>
     </android.support.design.widget.AppBarLayout>
-
-    <RelativeLayout
-        android:id="@+id/pager_layout"
+    <com.dalingge.awesome.widget.MyLinearLayout
+        android:id="@+id/linear_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clipChildren="false"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <android.support.v4.view.ViewPager
-            android:id="@+id/view_pager"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:clipChildren="false" />
-    </RelativeLayout>
+    <com.dalingge.awesome.widget.MyLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.dalingge.awesome.widget.MyButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Button"
+            android:id="@+id/button3"
+            android:layout_gravity="center_horizontal" />
+        </com.dalingge.awesome.widget.MyLinearLayout>
+    </com.dalingge.awesome.widget.MyLinearLayout>
 </android.support.design.widget.CoordinatorLayout>
