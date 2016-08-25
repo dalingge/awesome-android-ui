@@ -6,15 +6,20 @@ import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.util.Pair;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.ShareActionProvider;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.dalingge.awesome.R;
 import com.dalingge.awesome.activityoptions.activity.MainOptionsActivity;
 import com.dalingge.awesome.adapter.MainAdapter;
 import com.dalingge.awesome.transitionseverywhere.MainTransitionsActivity;
+import com.dalingge.awesome.widget.CartActionProvider;
 
 import butterknife.Bind;
 
@@ -92,7 +97,38 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     @Override public void onClick(View v) {
 
     }
+    ShareActionProvider shareProvider;
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.cart_menu, menu);
+        MenuItem item = menu.findItem(R.id.cart);
+        CartActionProvider cartActionProvider = (CartActionProvider)    MenuItemCompat.getActionProvider(item);
 
+//        shareProvider = (ShareActionProvider) MenuItemCompat
+//                .getActionProvider(menu.findItem(R.id.menu_item_share_provider));
+//        if (shareProvider == null) {
+//            System.out.println("----------------> is null");
+//        } else {
+//            System.out.println("--------------not null-----------");
+//        }
+//        shareProvider
+//                .setShareHistoryFileName(ShareActionProvider.DEFAULT_SHARE_HISTORY_FILE_NAME);
+//        shareProvider.setShareIntent(createShareIntent());
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+
+
+    /**
+     * @return The sharing intent.
+     */
+    private Intent createShareIntent() {
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        shareIntent.setType("text/plain");
+        shareIntent.putExtra(Intent.EXTRA_TEXT, "share");
+        return shareIntent;
+    }
 
 
 }

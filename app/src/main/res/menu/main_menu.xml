@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.kale.actionbar01.MainActivity" >
+
+    <item android:id="@+id/menu_item_share_provider"
+        app:showAsAction="ifRoom"
+        android:title="分享"
+        app:actionProviderClass="android.support.v7.widget.ShareActionProvider" />
+
+</menu>

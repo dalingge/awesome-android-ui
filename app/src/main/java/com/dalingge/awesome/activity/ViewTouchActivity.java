@@ -63,6 +63,7 @@ public class ViewTouchActivity extends BaseActivity {
 
              }
          }.start();
+
         button3.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
