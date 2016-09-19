@@ -22,15 +22,18 @@ import butterknife.ButterKnife;
  */
 public abstract class BaseActivity extends AppCompatActivity {
     @Nullable
-    @Bind(R.id.appbatlayout) AppBarLayout appbatlayout;
+    @Bind(R.id.appbatlayout)
+    AppBarLayout appbatlayout;
     @Bind(R.id.toolbar)
     Toolbar toolbar;
 
     /**
      * set layout of this activity
+     *
      * @return the id of layout
      */
     protected abstract int getLayout();
+
     protected abstract void initView();
 
     @Override
@@ -44,7 +47,8 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     }
 
-    protected void init(Bundle savedInstanceState) {}
+    protected void init(Bundle savedInstanceState) {
+    }
 
     @Override
     protected void onResume() {
@@ -66,7 +70,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     private void initToolBar() {
 
         setTitle("");
-        if(toolbar!=null){
+        if (toolbar != null) {
             setSupportActionBar(toolbar);
 
             if (isBack()) {

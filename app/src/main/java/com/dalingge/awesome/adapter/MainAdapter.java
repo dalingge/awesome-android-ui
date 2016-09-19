@@ -58,6 +58,6 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     }
 
     public interface OnRecyclerItemClick {
-        void onItemClick(View View);
+        void onItemClick(View view);
     }
 }

@@ -28,7 +28,11 @@
         <activity android:name=".transitionseverywhere.MainTransitionsActivity" />
         <activity android:name=".activity.ImageViewActivity" />
         <activity android:name=".activity.ViewTouchActivity" />
-        <activity android:name=".activity.HandlerActivity"></activity>
+        <activity android:name=".activity.HandlerActivity"/>
+        <activity android:name=".activity.onboarder.GradientBackgroundExampleActivity"/>
+        <activity android:name=".activity.onboarder.ImageBackgroundExampleActivity"/>
+        <activity android:name=".activity.onboarder.SolidBackgroundExampleActivity"/>
+
     </application>
 
 </manifest>
