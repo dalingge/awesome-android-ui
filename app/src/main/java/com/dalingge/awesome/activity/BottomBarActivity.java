@@ -2,9 +2,11 @@ package com.dalingge.awesome.activity;
 
 import android.os.Bundle;
 import android.util.Log;
-import butterknife.Bind;
+
 import com.dalingge.awesome.R;
 import com.roughike.bottombar.BottomBar;
+
+import butterknife.BindView;
 import me.majiajie.pagerbottomtabstrip.Controller;
 import me.majiajie.pagerbottomtabstrip.PagerBottomTabLayout;
 import me.majiajie.pagerbottomtabstrip.TabItemBuilder;
@@ -23,7 +25,7 @@ public class BottomBarActivity extends BaseActivity {
     private static final int BOTTOM_ITEM_TITLE_VIDEO_INDEX = 3;
     private static final int BOTTOM_ITEM_TITLE_WEB_INDEX = 4;
 
-    @Bind(R.id.tab) PagerBottomTabLayout tab;
+    @BindView(R.id.tab) PagerBottomTabLayout tab;
 
     private BottomBar mBottomBar;
 

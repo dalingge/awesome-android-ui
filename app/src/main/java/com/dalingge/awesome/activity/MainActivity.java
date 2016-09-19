@@ -26,7 +26,7 @@ import com.dalingge.awesome.adapter.MainAdapter;
 import com.dalingge.awesome.transitionseverywhere.MainTransitionsActivity;
 import com.dalingge.awesome.widget.CartActionProvider;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 public class MainActivity extends BaseActivity {
 
@@ -45,7 +45,7 @@ public class MainActivity extends BaseActivity {
     private Class[] classes = {HandlerActivity.class, ViewTouchActivity.class, ImageViewActivity.class, ViewPagerActivity.class, PullPagerActivity.class, BottomBarActivity.class, TextMoreActivity.class,
             MainOptionsActivity.class, MainTransitionsActivity.class,null};
 
-    @Bind(R.id.recycler_view_team)
+    @BindView(R.id.recycler_view_team)
     RecyclerView recyclerViewTeam;
 
 

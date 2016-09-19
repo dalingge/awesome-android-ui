@@ -9,13 +9,13 @@ import android.widget.Button;
 
 import com.dalingge.awesome.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 public class ViewTouchActivity extends BaseActivity {
 
     private static final String TAG = ViewTouchActivity.class.getSimpleName();
 
-    @Bind(R.id.button3)
+    @BindView(R.id.button3)
     Button button3;
 
     public Handler handler=new Handler(new Handler.Callback() {
