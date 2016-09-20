@@ -41,9 +41,10 @@ public class MainActivity extends BaseActivity {
             "展示更多文字",
             "Options的动画实现兼容",
             "Transitions的动画实现兼容",
-            "引导页"};
+            "引导页",
+             "DiffUtil"};
     private Class[] classes = {HandlerActivity.class, ViewTouchActivity.class, ImageViewActivity.class, ViewPagerActivity.class, PullPagerActivity.class, BottomBarActivity.class, TextMoreActivity.class,
-            MainOptionsActivity.class, MainTransitionsActivity.class,null};
+            MainOptionsActivity.class, MainTransitionsActivity.class,null,DiffActivity.class};
 
     @BindView(R.id.recycler_view_team)
     RecyclerView recyclerViewTeam;
@@ -69,6 +70,7 @@ public class MainActivity extends BaseActivity {
         @Override
         public void onItemClick(View view) {
             if (classes[(Integer) view.getTag()]==null){
+
                 new AlertDialog.Builder(view.getContext())
                         .setTitle("引导页")
                         .setItems(new String[]{"GradientBackgroundExampleActivity", "ImageBackgroundExampleActivity", "SolidBackgroundExampleActivity"}
@@ -89,7 +91,6 @@ public class MainActivity extends BaseActivity {
                 intent.putExtra("title", strings[(Integer) view.getTag()]);
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     startActivityLollipop(view, intent);
-                    startActivity(intent);
                 } else {
                     startActivityGingerBread(view, intent);
                 }

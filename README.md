@@ -1,6 +1,12 @@
 # awesome-android-ui
 
-## 解决了Java8和Butterknife8冲突问题
+## 2016年9月20日
+
+    android 7.0 使用 DiffUtil 高效更新 RecyclerView
+    修复了部分BUG
+## 2016年9月19日
+
+### 解决了Java8和Butterknife8冲突问题
 
 #### /build.gradle
 ```groovy
