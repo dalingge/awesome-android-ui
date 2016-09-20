@@ -18,7 +18,7 @@
 ```groovy
 buildscript {
     dependencies {
-          classpath 'com.android.tools.build:gradle:2.2.0-rc2'
+          classpath 'com.android.tools.build:gradle:2.2.0'
     }
 }
 ```
