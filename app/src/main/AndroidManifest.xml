@@ -32,7 +32,8 @@
         <activity android:name=".activity.onboarder.GradientBackgroundExampleActivity" />
         <activity android:name=".activity.onboarder.ImageBackgroundExampleActivity" />
         <activity android:name=".activity.onboarder.SolidBackgroundExampleActivity" />
-        <activity android:name=".activity.DiffActivity"></activity>
+        <activity android:name=".activity.DiffActivity" />
+        <activity android:name=".activity.SwipeCardActivity"></activity>
     </application>
 
 </manifest>

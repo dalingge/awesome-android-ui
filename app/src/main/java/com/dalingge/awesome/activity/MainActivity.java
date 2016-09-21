@@ -1,7 +1,6 @@
 package com.dalingge.awesome.activity;
 
 import android.annotation.TargetApi;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
@@ -42,9 +41,10 @@ public class MainActivity extends BaseActivity {
             "Options的动画实现兼容",
             "Transitions的动画实现兼容",
             "引导页",
-             "DiffUtil"};
+            "DiffUtil",
+            "卡片切换"};
     private Class[] classes = {HandlerActivity.class, ViewTouchActivity.class, ImageViewActivity.class, ViewPagerActivity.class, PullPagerActivity.class, BottomBarActivity.class, TextMoreActivity.class,
-            MainOptionsActivity.class, MainTransitionsActivity.class,null,DiffActivity.class};
+            MainOptionsActivity.class, MainTransitionsActivity.class,null,DiffActivity.class,SwipeCardActivity.class};
 
     @BindView(R.id.recycler_view_team)
     RecyclerView recyclerViewTeam;
@@ -66,22 +66,17 @@ public class MainActivity extends BaseActivity {
         recyclerViewTeam.setAdapter(new MainAdapter(strings, onRecyclerItemClick));
     }
 
-    private MainAdapter.OnRecyclerItemClick onRecyclerItemClick = new MainAdapter.OnRecyclerItemClick() {
-        @Override
-        public void onItemClick(View view) {
+    private MainAdapter.OnRecyclerItemClick onRecyclerItemClick = view ->{
+
             if (classes[(Integer) view.getTag()]==null){
 
                 new AlertDialog.Builder(view.getContext())
                         .setTitle("引导页")
                         .setItems(new String[]{"GradientBackgroundExampleActivity", "ImageBackgroundExampleActivity", "SolidBackgroundExampleActivity"}
-                        , new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                Class[] classes1 ={GradientBackgroundExampleActivity.class,ImageBackgroundExampleActivity.class,SolidBackgroundExampleActivity.class};
-                                Intent intent = new Intent(
-                                        MainActivity.this,classes1[i]);
-                                startActivity(intent);
-                            }
+                        ,(dialogInterface,i)-> {
+                                    Class[] classes1 ={GradientBackgroundExampleActivity.class,ImageBackgroundExampleActivity.class,SolidBackgroundExampleActivity.class};
+                                    startActivity(new Intent(MainActivity.this,classes1[i]));
+
                         }
 
                 ).show();
@@ -95,7 +90,7 @@ public class MainActivity extends BaseActivity {
                     startActivityGingerBread(view, intent);
                 }
             }
-        }
+
     };
 
 
