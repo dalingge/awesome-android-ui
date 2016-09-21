@@ -10,8 +10,9 @@ import android.view.MenuItem;
 
 import com.dalingge.awesome.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * FileName:BaseActivity.java
@@ -22,29 +23,33 @@ import butterknife.ButterKnife;
  */
 public abstract class BaseActivity extends AppCompatActivity {
     @Nullable
-    @Bind(R.id.appbatlayout) AppBarLayout appbatlayout;
-    @Bind(R.id.toolbar)
+    @BindView(R.id.appbatlayout)
+    AppBarLayout appbatlayout;
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
-
+    private Unbinder unbinder;
     /**
      * set layout of this activity
+     *
      * @return the id of layout
      */
     protected abstract int getLayout();
+
     protected abstract void initView();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayout());
-        ButterKnife.bind(this);
+        unbinder= ButterKnife.bind(this);
         initToolBar();
         init(savedInstanceState);
         initView();
 
     }
 
-    protected void init(Bundle savedInstanceState) {}
+    protected void init(Bundle savedInstanceState) {
+    }
 
     @Override
     protected void onResume() {
@@ -60,13 +65,13 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         //取消请求
-        ButterKnife.unbind(this);
+        unbinder.unbind();
     }
 
     private void initToolBar() {
 
         setTitle("");
-        if(toolbar!=null){
+        if (toolbar != null) {
             setSupportActionBar(toolbar);
 
             if (isBack()) {

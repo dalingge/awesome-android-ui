@@ -4,15 +4,17 @@ import android.os.Build;
 import android.transition.Slide;
 import android.util.Log;
 import android.view.Gravity;
-import butterknife.Bind;
+
 import com.dalingge.awesome.R;
 import com.dalingge.awesome.widget.ReadMoreTextView;
 
+import butterknife.BindView;
+
 public class TextMoreActivity extends BaseActivity {
 
-    @Bind(R.id.text1) ReadMoreTextView text1;
-    @Bind(R.id.text2) ReadMoreTextView text2;
-    @Bind(R.id.text3) ReadMoreTextView text3;
+    @BindView(R.id.text1) ReadMoreTextView text1;
+    @BindView(R.id.text2) ReadMoreTextView text2;
+    @BindView(R.id.text3) ReadMoreTextView text3;
 
 
     @Override

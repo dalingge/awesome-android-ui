@@ -6,18 +6,19 @@ import android.support.v4.widget.NestedScrollView;
 import android.view.View;
 import android.widget.ImageView;
 
-import butterknife.Bind;
 import com.dalingge.awesome.R;
+
+import butterknife.BindView;
 
 public class PullPagerActivity extends BaseActivity {
 
-    @Bind(R.id.layout)
+    @BindView(R.id.layout)
     AppBarLayout layout;
-    @Bind(R.id.nested_scroll_view)
+    @BindView(R.id.nested_scroll_view)
     NestedScrollView nestedScrollView;
-    @Bind(R.id.imageview)
+    @BindView(R.id.imageview)
     ImageView imageview;
-    @Bind(R.id.coordrinator_layout)
+    @BindView(R.id.coordrinator_layout)
     CoordinatorLayout coordrinatorLayout;
     private boolean mIsButtonAtTop;
 

@@ -8,12 +8,12 @@ import android.widget.RelativeLayout;
 import com.dalingge.awesome.R;
 import com.dalingge.awesome.adapter.ViewPagerAdapter;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 public class ViewPagerActivity extends BaseActivity {
 
-    @Bind(R.id.view_pager) ViewPager viewPager;
-    @Bind(R.id.pager_layout) RelativeLayout pagerLayout;
+    @BindView(R.id.view_pager) ViewPager viewPager;
+    @BindView(R.id.pager_layout) RelativeLayout pagerLayout;
 
     private static int TOTAL_COUNT = 6;
 

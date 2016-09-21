@@ -5,19 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
+
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay"
         android:transitionName="@string/transition_name">
+
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             app:elevation="@dimen/default_elevation"
-            app:popupTheme="@style/AppTheme.PopupOverlay"/>
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
     </android.support.design.widget.AppBarLayout>
+
     <LinearLayout
         android:id="@+id/linear_layout"
         android:layout_width="match_parent"
@@ -27,20 +30,20 @@
 
 
         <Button
+            android:id="@+id/start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="start"
-            android:id="@+id/start" />
+            android:text="@string/start" />
 
         <Button
+            android:id="@+id/stop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="stop"
-            android:id="@+id/stop" />
+            android:text="@string/stop" />
 
-   <!--<TextView-->
-       <!--android:id="@+id/tv_updata"-->
-       <!--android:layout_width="wrap_content"-->
-       <!--android:layout_height="wrap_content" />-->
+        <!--<TextView-->
+        <!--android:id="@+id/tv_updata"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content" />-->
     </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>
