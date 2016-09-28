@@ -58,6 +58,15 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+		
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.rank_all_arrays, R.layout.layout_drop_title);
+        adapter.setDropDownViewResource(R.layout.layout_drop_list);
+
+        Spinner mNavigationSpinner = new Spinner(actionBar.getThemedContext());
+        mNavigationSpinner.setAdapter(adapter);
+        getToolbar().addView(mNavigationSpinner);
+		
         recyclerViewTeam.setHasFixedSize(true);
         // 创建线性布局管理器
         final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);

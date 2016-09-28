@@ -26,5 +26,7 @@
         <attr name="min_adapter_stack" format="integer" />
         <attr name="max_visible" format="integer" />
     </declare-styleable>
-
+    <declare-styleable name="IconButton">
+        <attr name="iconPadding" format="dimension"/>
+    </declare-styleable>
 </resources>
