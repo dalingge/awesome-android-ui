@@ -29,4 +29,9 @@
     <declare-styleable name="IconButton">
         <attr name="iconPadding" format="dimension"/>
     </declare-styleable>
+
+    <declare-styleable name="CircularRingLoadingAnim">
+        <attr name="ring_color" format="color" />
+        <attr name="block_color" format="color" />
+    </declare-styleable>
 </resources>

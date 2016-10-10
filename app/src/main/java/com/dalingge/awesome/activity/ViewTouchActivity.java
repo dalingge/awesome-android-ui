@@ -1,13 +1,19 @@
 package com.dalingge.awesome.activity;
 
+import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
+import android.support.annotation.RequiresApi;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 
 import com.dalingge.awesome.R;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
 
 import butterknife.BindView;
 
@@ -49,9 +55,30 @@ public class ViewTouchActivity extends BaseActivity {
         return R.layout.activity_view_touch;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void initView() {
+        List<String> stringCollection = new ArrayList<>();
+        stringCollection.add("ddd2");
+        stringCollection.add("aaa2");
+        stringCollection.add("bbb1");
+        stringCollection.add("aaa1");
+        stringCollection.add("bbb3");
+        stringCollection.add("ccc");
+        stringCollection.add("bbb2");
+        stringCollection.add("ddd1");
+        stringCollection
+                .stream()
+                .map(String::toUpperCase)
+                .sorted((a, b) -> b.compareTo(a))
+                .forEach(System.out::println);
 
+        int max = 1000000;
+        List<String> values = new ArrayList<>(max);
+        for (int i = 0; i < max; i++) {
+            UUID uuid = UUID.randomUUID();
+            values.add(uuid.toString());
+        }
          new Thread(){
              public void run(){
                  try {

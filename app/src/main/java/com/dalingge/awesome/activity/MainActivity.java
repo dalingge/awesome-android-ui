@@ -42,9 +42,10 @@ public class MainActivity extends BaseActivity {
             "Transitions的动画实现兼容",
             "引导页",
             "DiffUtil",
-            "卡片切换"};
+            "卡片切换",
+             "loading动画"};
     private Class[] classes = {HandlerActivity.class, ViewTouchActivity.class, ImageViewActivity.class, ViewPagerActivity.class, PullPagerActivity.class, BottomBarActivity.class, TextMoreActivity.class,
-            MainOptionsActivity.class, MainTransitionsActivity.class,null,DiffActivity.class,SwipeCardActivity.class};
+            MainOptionsActivity.class, MainTransitionsActivity.class,null,DiffActivity.class,SwipeCardActivity.class,LoadingAnimActivity.class};
 
     @BindView(R.id.recycler_view_team)
     RecyclerView recyclerViewTeam;
@@ -59,13 +60,13 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void initView() {
 		
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.rank_all_arrays, R.layout.layout_drop_title);
-        adapter.setDropDownViewResource(R.layout.layout_drop_list);
-
-        Spinner mNavigationSpinner = new Spinner(actionBar.getThemedContext());
-        mNavigationSpinner.setAdapter(adapter);
-        getToolbar().addView(mNavigationSpinner);
+//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+//                R.array.rank_all_arrays, R.layout.layout_drop_title);
+//        adapter.setDropDownViewResource(R.layout.layout_drop_list);
+//
+//        Spinner mNavigationSpinner = new Spinner(actionBar.getThemedContext());
+//        mNavigationSpinner.setAdapter(adapter);
+//        getToolbar().addView(mNavigationSpinner);
 		
         recyclerViewTeam.setHasFixedSize(true);
         // 创建线性布局管理器
@@ -78,14 +79,12 @@ public class MainActivity extends BaseActivity {
     private MainAdapter.OnRecyclerItemClick onRecyclerItemClick = view ->{
 
             if (classes[(Integer) view.getTag()]==null){
-
                 new AlertDialog.Builder(view.getContext())
                         .setTitle("引导页")
                         .setItems(new String[]{"GradientBackgroundExampleActivity", "ImageBackgroundExampleActivity", "SolidBackgroundExampleActivity"}
                         ,(dialogInterface,i)-> {
                                     Class[] classes1 ={GradientBackgroundExampleActivity.class,ImageBackgroundExampleActivity.class,SolidBackgroundExampleActivity.class};
                                     startActivity(new Intent(MainActivity.this,classes1[i]));
-
                         }
 
                 ).show();

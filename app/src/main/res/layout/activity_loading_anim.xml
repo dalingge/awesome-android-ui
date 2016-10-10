@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordrinator_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:transitionName="@string/transition_name">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:elevation="@dimen/default_elevation"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nested_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:background="@color/bb_tabletRightBorderDark">
+
+            <com.dalingge.awesome.anim.CircularLoadingAnim
+                android:id="@+id/circular"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+
+            <com.dalingge.awesome.anim.CircularCDLoadingAnim
+                android:id="@+id/circularcd"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+
+            <com.dalingge.awesome.anim.CircularRingLoadingAnim
+                android:id="@+id/circularring"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:block_color="@android:color/holo_orange_light"
+                app:ring_color="@android:color/holo_green_light" />
+
+            <com.dalingge.awesome.anim.CircularJumpLoadingAnim
+                android:id="@+id/circularjump"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+
+            <com.dalingge.awesome.anim.CircularSmileLoadingAnim
+                android:id="@+id/circularsmile"
+                android:layout_width="50dp"
+
+                android:layout_height="50dp" />
+
+            <com.dalingge.awesome.anim.CircularZoomLoadingAnim
+                android:id="@+id/circularzoom"
+
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+
+            <com.dalingge.awesome.anim.LineWithTextLoadingAnim
+                android:id="@+id/linewithtext"
+
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <com.dalingge.awesome.anim.WifiLoadingAnim
+                android:id="@+id/wifianim"
+
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+
+            <com.dalingge.awesome.anim.PlayBallLoadingAnim
+                android:id="@+id/playball"
+
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+
+            <com.dalingge.awesome.anim.EatBeanLoadingAnim
+                android:id="@+id/eatbeans"
+
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+
+            <com.dalingge.awesome.anim.GearsLoadingAnim
+                android:id="@+id/gearloading"
+                android:layout_width="50dp"
+
+                android:layout_height="50dp" />
+
+            <com.dalingge.awesome.anim.ChromeLogoLoadingAnim
+                android:id="@+id/chromelogoloading"
+                android:layout_width="50dp"
+
+                android:layout_height="50dp" />
+
+            <com.dalingge.awesome.anim.GearsTwoLoadingAnim
+                android:id="@+id/geartwoloading"
+                android:layout_width="80dp"
+
+                android:layout_height="80dp" />
+
+            <com.dalingge.awesome.anim.GhostLoadingAnim
+                android:id="@+id/ghostloadinganim"
+                android:layout_width="200dp"
+
+                android:layout_height="120dp" />
+
+            <com.dalingge.awesome.anim.FinePoiStarLoadingAnim
+                android:id="@+id/finepoistar"
+                android:layout_width="80dp"
+
+                android:layout_height="80dp" />
+
+            <com.dalingge.awesome.anim.NewsLoadingAnim
+                android:id="@+id/newsloadanim"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+
+            <com.dalingge.awesome.anim.BlockLoadingAnim
+                android:id="@+id/blockloadinganim"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>
