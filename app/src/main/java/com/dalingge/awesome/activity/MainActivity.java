@@ -68,11 +68,12 @@ public class MainActivity extends BaseActivity {
 //        mNavigationSpinner.setAdapter(adapter);
 //        getToolbar().addView(mNavigationSpinner);
 		
-        recyclerViewTeam.setHasFixedSize(true);
+
         // 创建线性布局管理器
         final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         // 为RecyclerView指定布局管理对象
         recyclerViewTeam.setLayoutManager(linearLayoutManager);
+        recyclerViewTeam.setHasFixedSize(true);
         recyclerViewTeam.setAdapter(new MainAdapter(strings, onRecyclerItemClick));
     }
 

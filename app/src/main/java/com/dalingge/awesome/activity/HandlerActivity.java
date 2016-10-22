@@ -1,6 +1,5 @@
 package com.dalingge.awesome.activity;
 
-import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Message;
@@ -18,7 +17,6 @@ import com.dalingge.awesome.R;
 import java.util.HashMap;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class HandlerActivity extends BaseActivity implements View.OnClickListener {
@@ -36,7 +34,10 @@ public class HandlerActivity extends BaseActivity implements View.OnClickListene
     };
     private Handler threadHandler;
 
-
+    @Override
+    protected boolean isBack() {
+        return true;
+    }
     @Override
     protected int getLayout() {
         return R.layout.activity_handler;
@@ -82,10 +83,4 @@ public class HandlerActivity extends BaseActivity implements View.OnClickListene
         }
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
-    }
 }
