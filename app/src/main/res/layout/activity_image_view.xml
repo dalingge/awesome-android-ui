@@ -39,9 +39,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:background="@color/colorPrimary"
-            design:itemIconTint="@color/item_text_color"
-            design:itemTextColor="@color/item_text_color"
+            app:itemBackground="@color/colorPrimary"
+            app:itemIconTint="@color/item_text_color"
+            app:itemTextColor="@color/item_text_color"
             design:menu="@menu/menu_navigation" />
     </RelativeLayout>
 </android.support.design.widget.CoordinatorLayout>

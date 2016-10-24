@@ -36,17 +36,16 @@ public class ImageViewActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        final LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
+        LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
         recyclerview.setLayoutManager(mLayoutManager);
+        recyclerview.setHasFixedSize(true);
         recyclerview.setAdapter(new AppInfoAdapter(this, getAppInfo()));
-        // New in recyclerview-25.0.0
         recyclerview.addItemDecoration(new DividerItemDecoration(this, mLayoutManager.getOrientation()));
 
-        // new in design-25.0.0
         navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(item -> {
             Toast.makeText(ImageViewActivity.this, item.getTitle(), Toast.LENGTH_SHORT).show();
-            return false;
+            return true;
         });
     }
 
