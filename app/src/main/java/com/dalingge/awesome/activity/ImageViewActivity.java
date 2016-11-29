@@ -3,26 +3,19 @@ package com.dalingge.awesome.activity;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.widget.Toast;
 
 import com.dalingge.awesome.R;
-import com.dalingge.awesome.adapter.AppInfoAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-
 public class ImageViewActivity extends BaseActivity {
 
-    @BindView(R.id.recyclerview)
-    RecyclerView recyclerview;
-    @BindView(R.id.navigation)
-    BottomNavigationView navigation;
+//    @BindView(R.id.recyclerview)
+//    RecyclerView recyclerview;
+//    @BindView(R.id.navigation)
+//    BottomNavigationView navigation;
 
     @Override
     protected boolean isBack() {
@@ -37,16 +30,16 @@ public class ImageViewActivity extends BaseActivity {
     @Override
     protected void initView() {
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
-        recyclerview.setLayoutManager(mLayoutManager);
-        recyclerview.setHasFixedSize(true);
-        recyclerview.setAdapter(new AppInfoAdapter(this, getAppInfo()));
-        recyclerview.addItemDecoration(new DividerItemDecoration(this, mLayoutManager.getOrientation()));
-
-        navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(item -> {
-            Toast.makeText(ImageViewActivity.this, item.getTitle(), Toast.LENGTH_SHORT).show();
-            return true;
-        });
+//        recyclerview.setLayoutManager(mLayoutManager);
+//        recyclerview.setHasFixedSize(true);
+//        recyclerview.setAdapter(new AppInfoAdapter(this, getAppInfo()));
+//        recyclerview.addItemDecoration(new DividerItemDecoration(this, mLayoutManager.getOrientation()));
+//
+//        navigation = (BottomNavigationView) findViewById(R.id.navigation);
+//        navigation.setOnNavigationItemSelectedListener(item -> {
+//            Toast.makeText(ImageViewActivity.this, item.getTitle(), Toast.LENGTH_SHORT).show();
+//            return true;
+//        });
     }
 
     private List<AppInfo> getAppInfo() {

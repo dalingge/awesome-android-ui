@@ -24,12 +24,12 @@ public class ViewTouchActivity extends BaseActivity {
     @BindView(R.id.button3)
     Button button3;
 
-    public Handler handler=new Handler(new Handler.Callback() {
+    public Handler handler = new Handler(new Handler.Callback() {
         @Override
         public boolean handleMessage(Message msg) {
             return false;
         }
-    }){
+    }) {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
@@ -50,6 +50,7 @@ public class ViewTouchActivity extends BaseActivity {
             return super.getMessageName(message);
         }
     };
+
     @Override
     protected int getLayout() {
         return R.layout.activity_view_touch;
@@ -79,17 +80,7 @@ public class ViewTouchActivity extends BaseActivity {
             UUID uuid = UUID.randomUUID();
             values.add(uuid.toString());
         }
-         new Thread(){
-             public void run(){
-                 try {
-                     Thread.sleep(1000);
-                     button3.setText("12dasd1");
-                 } catch (InterruptedException e) {
-                     e.printStackTrace();
-                 }
 
-             }
-         }.start();
 
         button3.setOnTouchListener(new View.OnTouchListener() {
             @Override

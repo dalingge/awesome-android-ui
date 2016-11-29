@@ -31,6 +31,7 @@ public class MainActivity extends BaseActivity {
 
 
     private String[] strings = {
+            "高亮引导",
             "主线程与子线程的交互",
             "view事件分发机制",
             "imageview学习",
@@ -43,9 +44,10 @@ public class MainActivity extends BaseActivity {
             "引导页",
             "DiffUtil",
             "卡片切换",
-             "loading动画"};
-    private Class[] classes = {HandlerActivity.class, ViewTouchActivity.class, ImageViewActivity.class, ViewPagerActivity.class, PullPagerActivity.class, BottomBarActivity.class, TextMoreActivity.class,
-            MainOptionsActivity.class, MainTransitionsActivity.class,null,DiffActivity.class,SwipeCardActivity.class,LoadingAnimActivity.class};
+            "loading动画"
+    };
+    private Class[] classes = {HighLightGuideActivity.class, HandlerActivity.class, ViewTouchActivity.class, ImageViewActivity.class, ViewPagerActivity.class, PullPagerActivity.class, BottomBarActivity.class, TextMoreActivity.class,
+            MainOptionsActivity.class, MainTransitionsActivity.class, null, DiffActivity.class, SwipeCardActivity.class, LoadingAnimActivity.class};
 
     @BindView(R.id.recycler_view_team)
     RecyclerView recyclerViewTeam;
@@ -59,7 +61,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-		
+
 //        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
 //                R.array.rank_all_arrays, R.layout.layout_drop_title);
 //        adapter.setDropDownViewResource(R.layout.layout_drop_list);
@@ -67,7 +69,7 @@ public class MainActivity extends BaseActivity {
 //        Spinner mNavigationSpinner = new Spinner(actionBar.getThemedContext());
 //        mNavigationSpinner.setAdapter(adapter);
 //        getToolbar().addView(mNavigationSpinner);
-		
+
 
         // 创建线性布局管理器
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
@@ -77,28 +79,28 @@ public class MainActivity extends BaseActivity {
         recyclerViewTeam.setAdapter(new MainAdapter(strings, onRecyclerItemClick));
     }
 
-    private MainAdapter.OnRecyclerItemClick onRecyclerItemClick = view ->{
+    private MainAdapter.OnRecyclerItemClick onRecyclerItemClick = view -> {
 
-            if (classes[(Integer) view.getTag()]==null){
-                new AlertDialog.Builder(view.getContext())
-                        .setTitle("引导页")
-                        .setItems(new String[]{"GradientBackgroundExampleActivity", "ImageBackgroundExampleActivity", "SolidBackgroundExampleActivity"}
-                        ,(dialogInterface,i)-> {
-                                    Class[] classes1 ={GradientBackgroundExampleActivity.class,ImageBackgroundExampleActivity.class,SolidBackgroundExampleActivity.class};
-                                    startActivity(new Intent(MainActivity.this,classes1[i]));
-                        }
+        if (classes[(Integer) view.getTag()] == null) {
+            new AlertDialog.Builder(view.getContext())
+                    .setTitle("引导页")
+                    .setItems(new String[]{"GradientBackgroundExampleActivity", "ImageBackgroundExampleActivity", "SolidBackgroundExampleActivity"}
+                            , (dialogInterface, i) -> {
+                                Class[] classes1 = {GradientBackgroundExampleActivity.class, ImageBackgroundExampleActivity.class, SolidBackgroundExampleActivity.class};
+                                startActivity(new Intent(MainActivity.this, classes1[i]));
+                            }
 
-                ).show();
-            }else {
-                Intent intent = new Intent(
-                        MainActivity.this, classes[(Integer) view.getTag()]);
-                intent.putExtra("title", strings[(Integer) view.getTag()]);
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    startActivityLollipop(view, intent);
-                } else {
-                    startActivityGingerBread(view, intent);
-                }
+                    ).show();
+        } else {
+            Intent intent = new Intent(
+                    MainActivity.this, classes[(Integer) view.getTag()]);
+            intent.putExtra("title", strings[(Integer) view.getTag()]);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                startActivityLollipop(view, intent);
+            } else {
+                startActivityGingerBread(view, intent);
             }
+        }
 
     };
 

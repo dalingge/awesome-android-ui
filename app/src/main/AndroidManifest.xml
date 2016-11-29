@@ -35,6 +35,7 @@
         <activity android:name=".activity.DiffActivity" />
         <activity android:name=".activity.SwipeCardActivity" />
         <activity android:name=".activity.LoadingAnimActivity" />
+        <activity android:name=".activity.HighLightGuideActivity"></activity>
     </application>
 
 </manifest>
