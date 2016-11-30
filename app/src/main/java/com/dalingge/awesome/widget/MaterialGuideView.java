@@ -71,7 +71,7 @@ public class MaterialGuideView extends RelativeLayout {
         maskColor = 0x70000000;
         isFadeAnimationEnabled = true;
         touchOutsideCancel = true;
-        highLisghtPadding = getStatusBarHeight(context);
+        highLisghtPadding = 0;
         // 实例化画笔并开启其抗锯齿和抗抖动
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.DITHER_FLAG);
         // 设置画笔透明度为0是关键！
@@ -79,7 +79,7 @@ public class MaterialGuideView extends RelativeLayout {
         // 设置混合模式为DST_IN
         mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
         //设置画笔类型
-        mPaint.setMaskFilter(new BlurMaskFilter(15, BlurMaskFilter.Blur.SOLID));
+        mPaint.setMaskFilter(new BlurMaskFilter(20, BlurMaskFilter.Blur.SOLID));
     }
 
     @Override
@@ -117,7 +117,7 @@ public class MaterialGuideView extends RelativeLayout {
         int vWidth = targetView.getWidth();
         int vHeight = targetView.getHeight();
         int[] location = new int[2];
-        targetView.getLocationInWindow(location);
+        targetView.getLocationOnScreen(location);
         Rect rtLocation = new Rect(
                 location[0],
                 location[1],
