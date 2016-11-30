@@ -30,6 +30,7 @@ public class HighLightGuideActivity extends BaseActivity {
 
         new MaterialGuideView.Builder(this)
                 .setTarget(tvBuy)
+                .setMaskColor(0x6A000000)
                 .setOnDismissListener(()->Toast.makeText(this, "111", Toast.LENGTH_SHORT).show())
                 .show();
     }

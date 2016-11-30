@@ -41,7 +41,7 @@ public class MaterialGuideView extends RelativeLayout {
      *****************************/
     private View targetView;//高亮目标view
     private boolean touchOutsideCancel ;//外部点击是否可关闭
-    private int maskColor = 0x70000000;// 蒙版层颜色
+    private int maskColor ;// 蒙版层颜色
     private int highLisghtPadding = 0;// 高亮控件padding
     private boolean isFadeAnimationEnabled;//过度动画
 
@@ -68,6 +68,7 @@ public class MaterialGuideView extends RelativeLayout {
         setVisibility(INVISIBLE);
 
         handler = new Handler();
+        maskColor = 0x70000000;
         isFadeAnimationEnabled = true;
         touchOutsideCancel = true;
         highLisghtPadding = getStatusBarHeight(context);
@@ -103,6 +104,7 @@ public class MaterialGuideView extends RelativeLayout {
             this.canvas = new Canvas(bitmap);
         }
 
+        // 清除画布，绘制指定的颜色
         this.canvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
         // 绘制前景画布颜色
         this.canvas.drawColor(maskColor);
@@ -182,6 +184,10 @@ public class MaterialGuideView extends RelativeLayout {
         return result;
     }
 
+    private void setMaskColor(int maskColor) {
+        this.maskColor = maskColor;
+    }
+
     private void setTarget(View target) {
         this.targetView = target;
     }
@@ -215,6 +221,17 @@ public class MaterialGuideView extends RelativeLayout {
 
             return materialIntroView;
         }
+
+        /**
+         * 遮罩颜色
+         * @param maskColor
+         * @return
+         */
+        public Builder setMaskColor(int maskColor) {
+            materialIntroView.setMaskColor(maskColor);
+            return this;
+        }
+
 
         /**
          * 设置需要高亮的View和提示的图片
