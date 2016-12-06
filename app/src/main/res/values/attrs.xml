@@ -34,4 +34,13 @@
         <attr name="ring_color" format="color" />
         <attr name="block_color" format="color" />
     </declare-styleable>
+
+    <declare-styleable name="ArcHeader">
+        <attr name="arc_height" format="dimension" />
+        <attr name="arc_cropColor" format="color"/>
+        <attr name="arc_cropDirection" format="enum">
+            <enum name="cropInside" value="0" />
+            <enum name="cropOutside" value="1"/>
+        </attr>
+    </declare-styleable>
 </resources>
