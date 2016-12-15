@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="45dp"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/tab_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="@color/primary_text"
+        android:textSize="14sp" />
+
+    <View
+        android:id="@+id/tab_indicator"
+        android:layout_width="20dp"
+        android:layout_height="2dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"/>
+    <!--<ImageView-->
+        <!--android:id="@+id/tab_indicator"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center_vertical"-->
+        <!--android:contentDescription="@null"-->
+        <!--android:visibility="gone" />-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/tab_mes"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center_vertical"-->
+        <!--android:background="@mipmap/notification_bg"-->
+        <!--android:gravity="center"-->
+        <!--android:singleLine="true"-->
+        <!--android:textColor="@android:color/white"-->
+        <!--android:textSize="10sp"-->
+        <!--android:visibility="gone" />-->
+
+</RelativeLayout>

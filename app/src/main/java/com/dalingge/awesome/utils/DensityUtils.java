@@ -56,4 +56,23 @@ public class DensityUtils {
         final float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
         return (int) (spValue * fontScale + 0.5f);
     }
+
+
+
+
+    /***
+     * 获取屏幕密度相对值
+     * @param value
+     * @param activity
+     * @return
+     */
+    public static int getDensityValue(int value, Context activity){
+
+
+
+        return (int)Math.ceil(value*activity.getResources().getDisplayMetrics().density);
+    }
+
+
+
 }

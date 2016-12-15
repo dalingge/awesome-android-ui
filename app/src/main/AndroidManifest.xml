@@ -10,33 +10,68 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".activity.MainActivity"
-            android:theme="@style/AppTheme.ExplodeContent"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.ExplodeContent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.ViewPagerActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".activity.PullPagerActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".activity.BottomBarActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".activity.TextMoreActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".activityoptions.activity.MainOptionsActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.ViewPagerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PullPagerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.BottomBarActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.TextMoreActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activityoptions.activity.MainOptionsActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activityoptions.activity.TargetActivity"
-            android:theme="@style/TranslucentTheme" android:screenOrientation="portrait"/>
-        <activity android:name=".transitionseverywhere.MainTransitionsActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".activity.ImageViewActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".activity.ViewTouchActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".activity.HandlerActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".activity.onboarder.GradientBackgroundExampleActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".activity.onboarder.ImageBackgroundExampleActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".activity.onboarder.SolidBackgroundExampleActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".activity.DiffActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".activity.SwipeCardActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".activity.LoadingAnimActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".activity.HighLightGuideActivity" android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/TranslucentTheme" />
+        <activity
+            android:name=".transitionseverywhere.MainTransitionsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ImageViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ViewTouchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HandlerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.onboarder.GradientBackgroundExampleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.onboarder.ImageBackgroundExampleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.onboarder.SolidBackgroundExampleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.DiffActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SwipeCardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.LoadingAnimActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HighLightGuideActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activity.WaveActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

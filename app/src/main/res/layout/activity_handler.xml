@@ -19,6 +19,16 @@
             android:background="?attr/colorPrimary"
             app:elevation="@dimen/default_elevation"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="?attr/colorPrimary"
+            app:tabTextColor="@color/white"
+            app:tabSelectedTextColor="@color/colorAccent"
+            app:tabIndicatorHeight="0dp"
+            app:tabMode="scrollable"
+            app:tabGravity="center"/>
     </android.support.design.widget.AppBarLayout>
 
     <LinearLayout
@@ -27,7 +37,18 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
+<com.dalingge.awesome.widget.NavigationTabStrip
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:layout_gravity="center"
+    app:nts_active_color="#fff"
+    app:nts_color="#ff1748"
+    app:nts_factor="2.8"
+    app:nts_corners_radius="1.5dp"
+    app:nts_inactive_color="#81ffffff"
+    app:nts_titles="@array/titles"
+    app:nts_typeface="fonts/drugs.otf"
+    app:nts_weight="3dp"/>
 
         <Button
             android:id="@+id/start"
@@ -41,9 +62,6 @@
             android:layout_height="wrap_content"
             android:text="@string/stop" />
 
-        <!--<TextView-->
-        <!--android:id="@+id/tv_updata"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content" />-->
+
     </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>

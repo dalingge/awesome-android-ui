@@ -31,4 +31,11 @@
     <string name="button.finish">FINISH</string>
     <string name="button.next">NEXT</string>
     <string name="button.skip">SKIP</string>
+
+    <string-array name="titles">
+        <item>Nav</item>
+        <item>Tab</item>
+        <item>Strip</item>
+    </string-array>
+
 </resources>

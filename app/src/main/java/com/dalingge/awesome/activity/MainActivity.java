@@ -31,6 +31,7 @@ public class MainActivity extends BaseActivity {
 
 
     private String[] strings = {
+            "波浪效果",
             "高亮引导",
             "主线程与子线程的交互",
             "view事件分发机制",
@@ -46,7 +47,7 @@ public class MainActivity extends BaseActivity {
             "卡片切换",
             "loading动画"
     };
-    private Class[] classes = {HighLightGuideActivity.class, HandlerActivity.class, ViewTouchActivity.class, ImageViewActivity.class, ViewPagerActivity.class, PullPagerActivity.class, BottomBarActivity.class, TextMoreActivity.class,
+    private Class[] classes = {WaveActivity.class,HighLightGuideActivity.class, HandlerActivity.class, ViewTouchActivity.class, ImageViewActivity.class, ViewPagerActivity.class, PullPagerActivity.class, BottomBarActivity.class, TextMoreActivity.class,
             MainOptionsActivity.class, MainTransitionsActivity.class, null, DiffActivity.class, SwipeCardActivity.class, LoadingAnimActivity.class};
 
     @BindView(R.id.recycler_view_team)
