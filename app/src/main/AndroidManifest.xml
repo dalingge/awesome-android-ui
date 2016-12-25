@@ -70,7 +70,11 @@
         <activity
             android:name=".activity.HighLightGuideActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".activity.WaveActivity"
+        <activity
+            android:name=".activity.WaveActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.FragmentActivity"
             android:screenOrientation="portrait" />
     </application>
 

@@ -1,8 +1,10 @@
 package com.dalingge.awesome.activity;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -70,15 +72,24 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     private void initToolBar() {
 
-        setTitle("");
-        if (toolbar != null) {
-            setSupportActionBar(toolbar);
-
+        if (toolbar == null) {
+            throw new IllegalStateException(
+                    "The subclass of ToolbarActivity must contain a toolbar.");
+        }
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayShowTitleEnabled(false);//让原始的toolbar的title不显示
             if (isBack()) {
-                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-                setTitle(getIntent().getExtras().getString("title"));
+                actionBar.setDisplayHomeAsUpEnabled(true);
             }
         }
+
+        toolbar.setTitle(getIntent().getStringExtra("title"));
+        if (Build.VERSION.SDK_INT >= 21) {
+            toolbar.setElevation(10.6f);
+        }
+
     }
 
     protected boolean isBack() {

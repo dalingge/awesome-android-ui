@@ -1,0 +1,58 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/solid_one"
+    tools:context="com.dalingge.awesome.fragment.MainFragment">
+
+
+    <TextView
+        android:id="@+id/tv_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="100dp"
+        android:drawableStart="@drawable/ic_search"
+        android:text="搜索"
+        android:gravity="center_vertical"
+        android:textSize="16sp"
+        android:background="@drawable/shape_search_white"
+        android:textColor="#8a8a8a"/>
+
+    <Button
+        android:id="@+id/start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_margin="20dp"
+        android:text="start"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="20dp"
+        android:text="reset"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+
+    <com.dalingge.awesome.widget.ShareButtonView
+        android:id="@+id/share_button"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+
+    <com.dalingge.awesome.widget.SearchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/share_button"
+        android:layout_alignParentStart="true"
+        android:id="@+id/search_view" />
+
+</RelativeLayout>

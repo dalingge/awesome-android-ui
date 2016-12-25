@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
+
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -16,19 +17,13 @@
             android:background="?attr/colorPrimary"
             app:elevation="@dimen/default_elevation"
             app:popupTheme="@style/AppTheme.PopupOverlay"/>
+
     </android.support.design.widget.AppBarLayout>
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view_team"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clipToPadding="false"
-        android:padding="10dp"/>
-
 
     <FrameLayout
         android:id="@+id/fragmentContainer"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
 </android.support.design.widget.CoordinatorLayout >

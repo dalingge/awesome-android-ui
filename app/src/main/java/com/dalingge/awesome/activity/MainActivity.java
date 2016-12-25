@@ -3,8 +3,7 @@ package com.dalingge.awesome.activity;
 import android.annotation.TargetApi;
 import android.content.Intent;
 import android.os.Build;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.app.*;
 import android.support.v4.util.Pair;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewCompat;
@@ -149,6 +148,18 @@ public class MainActivity extends BaseActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.action_fragment:
+                Intent intent = new Intent(
+                        MainActivity.this, FragmentActivity.class);
+                intent.putExtra("title", "FragmentActivity");
+                startActivity(intent);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     /**
      * @return The sharing intent.

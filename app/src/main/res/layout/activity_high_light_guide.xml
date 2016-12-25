@@ -100,6 +100,20 @@
                 </RelativeLayout>
 
             </LinearLayout>
+
+            <com.dalingge.awesome.widget.DiagonalLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                app:diagonal_angle="10"
+                app:diagonal_gravity="right|top">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@null"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/mine_bg" />
+            </com.dalingge.awesome.widget.DiagonalLayout>
         </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
