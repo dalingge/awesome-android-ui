@@ -12,4 +12,6 @@
     <dimen name="activity_half_margin">8dp</dimen>
     <dimen name="indicator_size">8dp</dimen>
     <dimen name="section_image_item">128dp</dimen>
+
+    <dimen name="font_space_width">12dp</dimen>
 </resources>
