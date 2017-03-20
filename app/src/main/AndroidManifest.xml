@@ -79,16 +79,18 @@
         <activity
             android:name=".activity.FragmentActivity"
             android:screenOrientation="portrait" />
-
-        <activity android:name=".airbnb.MainActivity"
+        <activity
+            android:name=".airbnb.MainActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".airbnb.FontActivity"
-            android:windowSoftInputMode="stateVisible"
-            android:screenOrientation="portrait" />
-
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible" />
         <activity
             android:name=".airbnb.AppIntroActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ConstraintActivity"
             android:screenOrientation="portrait" />
     </application>
 
