@@ -92,6 +92,7 @@
         <activity
             android:name=".activity.ConstraintActivity"
             android:screenOrientation="portrait" />
+        <activity android:name=".activity.SplashActivity"></activity>
     </application>
 
 </manifest>
