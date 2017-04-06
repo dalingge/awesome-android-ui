@@ -1,6 +1,10 @@
 package com.dalingge.awesome.activity;
 
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.animation.DynamicAnimation;
 import android.support.animation.SpringAnimation;
 import android.support.animation.SpringForce;
 import android.support.v7.app.AppCompatActivity;
@@ -53,91 +57,99 @@ public class SplashActivity extends AppCompatActivity {
             mLetterAnims.add(letterAnimY);
         }
 
-//        // text about 'Native messaging'
-//        mDescTitleTextView = (TextView) findViewById(R.id.desc_title_textview);
-//        mDescTitleTextView.setTranslationY(500f);
-//        mDescTitleTextView.setAlpha(0f);
-//        final SpringAnimation descTitleAnimY = new SpringAnimation(mDescTitleTextView, DynamicAnimation.TRANSLATION_Y, 0);
-//        descTitleAnimY.getSpring().setStiffness(SpringForce.STIFFNESS_VERY_LOW);
-//        descTitleAnimY.getSpring().setDampingRatio(SpringForce.DAMPING_RATIO_LOW_BOUNCY);
-//
-//        final ValueAnimator descTitleAlphaAnim = ObjectAnimator.ofFloat(0f, 1f);
-//        descTitleAlphaAnim.setDuration(300);
-//        descTitleAlphaAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-//            @Override
-//            public void onAnimationUpdate(ValueAnimator valueAnimator) {
-//                mDescTitleTextView.setAlpha((Float) valueAnimator.getAnimatedValue());
-//            }
-//        });
-//
-//        // the button of sign up
-//        mSignUpBtn = (Button) findViewById(R.id.sign_up_btn);
-//        mSignUpBtn.setTranslationY(500f);
-//        final SpringAnimation signUpBtnAnimY = new SpringAnimation(mSignUpBtn, SpringAnimation.TRANSLATION_Y, 0);
-//        signUpBtnAnimY.getSpring().setStiffness(SpringForce.STIFFNESS_VERY_LOW);
-//        signUpBtnAnimY.getSpring().setDampingRatio(SpringForce.DAMPING_RATIO_LOW_BOUNCY);
-//        // the bottom text about 'Have an account? sign in'
-//        mSignInLayout = (LinearLayout) findViewById(R.id.signin_layout);
-//        mSignInLayout.setTranslationY(500f);
-//        final SpringAnimation signInLayoutAnimY = new SpringAnimation(mSignInLayout, SpringAnimation.TRANSLATION_Y, 0);
-//        signInLayoutAnimY.getSpring().setStiffness(SpringForce.STIFFNESS_VERY_LOW);
-//        signInLayoutAnimY.getSpring().setDampingRatio(SpringForce.DAMPING_RATIO_LOW_BOUNCY);
-//        // top logo by left
-//        mLeftLogoImg = (ImageView) findViewById(R.id.left_logo_imageview);
-//        mLeftLogoImg.setTranslationY(400f);
-//        mLeftLogoImg.setAlpha(0f);
-//        final SpringAnimation leftLogoAnimY = new SpringAnimation(mLeftLogoImg, SpringAnimation.TRANSLATION_Y, 0);
-//        leftLogoAnimY.getSpring().setStiffness(SpringForce.STIFFNESS_VERY_LOW);
-//        leftLogoAnimY.getSpring().setDampingRatio(SpringForce.DAMPING_RATIO_LOW_BOUNCY);
-//        leftLogoAnimY.setStartVelocity(-2000);
-//        // top logo by right
-//        mRightLogoImg = (ImageView) findViewById(R.id.right_logo_imageview);
-//        mRightLogoImg.setTranslationY(400f);
-//        mRightLogoImg.setAlpha(0f);
-//        final SpringAnimation rightLogoAnimY = new SpringAnimation(mRightLogoImg, SpringAnimation.TRANSLATION_Y, 0);
-//        rightLogoAnimY.getSpring().setStiffness(SpringForce.STIFFNESS_VERY_LOW);
-//        rightLogoAnimY.getSpring().setDampingRatio(SpringForce.DAMPING_RATIO_LOW_BOUNCY);
-//        rightLogoAnimY.setStartVelocity(-2000);
-//
-//        final ValueAnimator logoAlphaAnim = ObjectAnimator.ofFloat(0f, 1f);
-//        logoAlphaAnim.setDuration(600);
-//        logoAlphaAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-//            @Override
-//            public void onAnimationUpdate(ValueAnimator valueAnimator) {
-//                mLeftLogoImg.setAlpha((Float) valueAnimator.getAnimatedValue());
-//                mRightLogoImg.setAlpha((Float) valueAnimator.getAnimatedValue());
-//            }
-//        });
-//        mRightLogoImg.postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                leftLogoAnimY.start();
-//                mRightLogoImg.postDelayed(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        rightLogoAnimY.start();
-//                    }
-//                }, 150);
-//                mDescTitleTextView.postDelayed(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        descTitleAlphaAnim.setStartDelay(100);
-//                        descTitleAlphaAnim.start();
-//                        descTitleAnimY.start();
-//                        signUpBtnAnimY.start();
-//                        signInLayoutAnimY.start();
-//                    }
-//                }, 300);
-//                for (final SpringAnimation letterAnim : mLetterAnims) {
-//                    mLettersLayout.postDelayed(new Runnable() {
-//                        @Override
-//                        public void run() {
-//                            letterAnim.start();
-//                        }
-//                    }, 12 * mLetterAnims.indexOf(letterAnim));
-//                }
-//                logoAlphaAnim.start();
-//            }
-//        }, 1000);
+        // text about 'Native messaging'
+        mDescTitleTextView = (TextView) findViewById(R.id.desc_title_textview);
+        mDescTitleTextView.setTranslationY(500f);
+        mDescTitleTextView.setAlpha(0f);
+        final SpringAnimation descTitleAnimY = new SpringAnimation(mDescTitleTextView, DynamicAnimation.TRANSLATION_Y, 0);
+        descTitleAnimY.getSpring().setStiffness(SpringForce.STIFFNESS_VERY_LOW);
+        descTitleAnimY.getSpring().setDampingRatio(SpringForce.DAMPING_RATIO_LOW_BOUNCY);
+
+        final ValueAnimator descTitleAlphaAnim = ObjectAnimator.ofFloat(0f, 1f);
+        descTitleAlphaAnim.setDuration(300);
+        descTitleAlphaAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator valueAnimator) {
+                mDescTitleTextView.setAlpha((Float) valueAnimator.getAnimatedValue());
+            }
+        });
+
+        // the button of sign up
+        mSignUpBtn = (Button) findViewById(R.id.sign_up_btn);
+        mSignUpBtn.setTranslationY(500f);
+        final SpringAnimation signUpBtnAnimY = new SpringAnimation(mSignUpBtn, SpringAnimation.TRANSLATION_Y, 0);
+        signUpBtnAnimY.getSpring().setStiffness(SpringForce.STIFFNESS_VERY_LOW);
+        signUpBtnAnimY.getSpring().setDampingRatio(SpringForce.DAMPING_RATIO_LOW_BOUNCY);
+        // the bottom text about 'Have an account? sign in'
+        mSignInLayout = (LinearLayout) findViewById(R.id.signin_layout);
+        mSignInLayout.setTranslationY(500f);
+        final SpringAnimation signInLayoutAnimY = new SpringAnimation(mSignInLayout, SpringAnimation.TRANSLATION_Y, 0);
+        signInLayoutAnimY.getSpring().setStiffness(SpringForce.STIFFNESS_VERY_LOW);
+        signInLayoutAnimY.getSpring().setDampingRatio(SpringForce.DAMPING_RATIO_LOW_BOUNCY);
+        signInLayoutAnimY.addEndListener(new DynamicAnimation.OnAnimationEndListener() {
+            @Override
+            public void onAnimationEnd(DynamicAnimation animation, boolean canceled, float value, float velocity) {
+                startActivity(new Intent(SplashActivity.this,MainActivity.class));
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                SplashActivity.this.finish();
+            }
+        });
+        // top logo by left
+        mLeftLogoImg = (ImageView) findViewById(R.id.left_logo_imageview);
+        mLeftLogoImg.setTranslationY(400f);
+        mLeftLogoImg.setAlpha(0f);
+        final SpringAnimation leftLogoAnimY = new SpringAnimation(mLeftLogoImg, SpringAnimation.TRANSLATION_Y, 0);
+        leftLogoAnimY.getSpring().setStiffness(SpringForce.STIFFNESS_VERY_LOW);
+        leftLogoAnimY.getSpring().setDampingRatio(SpringForce.DAMPING_RATIO_LOW_BOUNCY);
+        leftLogoAnimY.setStartVelocity(-2000);
+        // top logo by right
+        mRightLogoImg = (ImageView) findViewById(R.id.right_logo_imageview);
+        mRightLogoImg.setTranslationY(400f);
+        mRightLogoImg.setAlpha(0f);
+        final SpringAnimation rightLogoAnimY = new SpringAnimation(mRightLogoImg, SpringAnimation.TRANSLATION_Y, 0);
+        rightLogoAnimY.getSpring().setStiffness(SpringForce.STIFFNESS_VERY_LOW);
+        rightLogoAnimY.getSpring().setDampingRatio(SpringForce.DAMPING_RATIO_LOW_BOUNCY);
+        rightLogoAnimY.setStartVelocity(-2000);
+
+        final ValueAnimator logoAlphaAnim = ObjectAnimator.ofFloat(0f, 1f);
+        logoAlphaAnim.setDuration(600);
+        logoAlphaAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator valueAnimator) {
+                mLeftLogoImg.setAlpha((Float) valueAnimator.getAnimatedValue());
+                mRightLogoImg.setAlpha((Float) valueAnimator.getAnimatedValue());
+            }
+        });
+        mRightLogoImg.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                leftLogoAnimY.start();
+                mRightLogoImg.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        rightLogoAnimY.start();
+                    }
+                }, 150);
+                mDescTitleTextView.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        descTitleAlphaAnim.setStartDelay(100);
+                        descTitleAlphaAnim.start();
+                        descTitleAnimY.start();
+                        signUpBtnAnimY.start();
+                        signInLayoutAnimY.start();
+                    }
+                }, 300);
+                for (final SpringAnimation letterAnim : mLetterAnims) {
+                    mLettersLayout.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            letterAnim.start();
+                        }
+                    }, 12 * mLetterAnims.indexOf(letterAnim));
+                }
+                logoAlphaAnim.start();
+            }
+        }, 1000);
     }
 }

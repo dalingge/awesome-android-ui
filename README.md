@@ -1,5 +1,9 @@
 # awesome-android-ui
 
+## 2017年4月6日
+
+### 增加SplashActivity 使用SpringAnimation实现弹簧动画
+
 ## 2017年3月31日
 
 ### 练习约束布局
