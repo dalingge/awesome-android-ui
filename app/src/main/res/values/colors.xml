@@ -24,4 +24,6 @@
     <color name="solid_one">#4abc96</color>
     <color name="solid_two">#357180</color>
     <color name="solid_three">#ffce00</color>
+
+    <color name="list_bg">#3B3B3B</color>
 </resources>

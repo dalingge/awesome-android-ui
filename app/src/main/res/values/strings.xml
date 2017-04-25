@@ -43,4 +43,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_constraint">ConstraintActivity</string>
 
+    <string name="permission_request_denied">需要相应的权限</string>
+    <string name="error_gif">长宽不小于 %1$dpx，且大小不超过 %2$sM。</string>
 </resources>
