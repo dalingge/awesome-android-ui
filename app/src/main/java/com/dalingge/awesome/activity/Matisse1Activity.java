@@ -25,7 +25,7 @@ import java.util.List;
 
 import rx.Subscriber;
 
-public class MatisseActivity extends BaseActivity implements View.OnClickListener{
+public class Matisse1Activity extends BaseActivity implements View.OnClickListener{
 
     private static final int REQUEST_CODE_CHOOSE = 23;
 
@@ -71,7 +71,7 @@ public class MatisseActivity extends BaseActivity implements View.OnClickListene
                         if (aBoolean) {
                             switch (v.getId()) {
                                 case R.id.zhihu:
-                                    Matisse.from(MatisseActivity.this)
+                                    Matisse.from(Matisse1Activity.this)
                                             .choose(MimeType.allOf())
                                             .countable(true)
                                             .maxSelectable(9)
@@ -84,7 +84,7 @@ public class MatisseActivity extends BaseActivity implements View.OnClickListene
                                             .forResult(REQUEST_CODE_CHOOSE);
                                     break;
                                 case R.id.dracula:
-                                    Matisse.from(MatisseActivity.this)
+                                    Matisse.from(Matisse1Activity.this)
                                             .choose(MimeType.of(MimeType.JPEG, MimeType.PNG))
                                             .theme(R.style.Matisse_Dracula)
                                             .countable(false)
@@ -95,7 +95,7 @@ public class MatisseActivity extends BaseActivity implements View.OnClickListene
                             }
                             mAdapter.setData(null);
                         } else {
-                            Toast.makeText(MatisseActivity.this, R.string.permission_request_denied, Toast.LENGTH_LONG)
+                            Toast.makeText(Matisse1Activity.this, R.string.permission_request_denied, Toast.LENGTH_LONG)
                                     .show();
                         }
                     }

@@ -49,7 +49,7 @@ public class MainActivity extends BaseActivity {
             "卡片切换",
             "loading动画"
     };
-    private Class[] classes = {MatisseActivity.class,ConstraintActivity.class,com.dalingge.awesome.airbnb.MainActivity.class,WaveActivity.class,HighLightGuideActivity.class, HandlerActivity.class, ViewTouchActivity.class, ImageViewActivity.class, ViewPagerActivity.class, PullPagerActivity.class, BottomBarActivity.class, TextMoreActivity.class,
+    private Class[] classes = {Matisse1Activity.class,ConstraintActivity.class,com.dalingge.awesome.airbnb.MainActivity.class,WaveActivity.class,HighLightGuideActivity.class, HandlerActivity.class, ViewTouchActivity.class, ImageViewActivity.class, ViewPagerActivity.class, PullPagerActivity.class, BottomBarActivity.class, TextMoreActivity.class,
             MainOptionsActivity.class, MainTransitionsActivity.class, null, DiffActivity.class, SwipeCardActivity.class, LoadingAnimActivity.class};
 
     @BindView(R.id.recycler_view_team)
