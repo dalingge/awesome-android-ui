@@ -30,6 +30,7 @@ public class MainActivity extends BaseActivity {
 
 
     private String[] strings = {
+            "Kotlin学习",
             "Matisse Android 图片选择器",
             "约束布局",
             "aribnb",
@@ -49,8 +50,27 @@ public class MainActivity extends BaseActivity {
             "卡片切换",
             "loading动画"
     };
-    private Class[] classes = {Matisse1Activity.class,ConstraintActivity.class,com.dalingge.awesome.airbnb.MainActivity.class,WaveActivity.class,HighLightGuideActivity.class, HandlerActivity.class, ViewTouchActivity.class, ImageViewActivity.class, ViewPagerActivity.class, PullPagerActivity.class, BottomBarActivity.class, TextMoreActivity.class,
-            MainOptionsActivity.class, MainTransitionsActivity.class, null, DiffActivity.class, SwipeCardActivity.class, LoadingAnimActivity.class};
+
+    private Class[] classes = {
+            KotlinActivity.class,
+            Matisse1Activity.class,
+            ConstraintActivity.class,
+            com.dalingge.awesome.airbnb.MainActivity.class,
+            WaveActivity.class,
+            HighLightGuideActivity.class,
+            HandlerActivity.class,
+            ViewTouchActivity.class,
+            ImageViewActivity.class,
+            ViewPagerActivity.class,
+            PullPagerActivity.class,
+            BottomBarActivity.class,
+            TextMoreActivity.class,
+            MainOptionsActivity.class,
+            MainTransitionsActivity.class,
+            null,
+            DiffActivity.class,
+            SwipeCardActivity.class,
+            LoadingAnimActivity.class};
 
     @BindView(R.id.recycler_view_team)
     RecyclerView recyclerViewTeam;
@@ -153,7 +173,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.action_fragment:
                 Intent intent = new Intent(
                         MainActivity.this, FragmentActivity.class);

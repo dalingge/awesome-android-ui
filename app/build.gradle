@@ -1,5 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 25
@@ -76,7 +78,7 @@ dependencies {
     compile 'com.matthew-tamlin:sliding-intro-screen:3.2.0'
     compile 'com.airbnb.android:lottie:1.0.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.zhihu.android:matisse:0.4.3'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
-    compile 'com.zhihu.android:matisse:0.4.3'
 }
