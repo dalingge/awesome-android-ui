@@ -11,10 +11,11 @@
         android:title="fragment"
         app:showAsAction="never"/>
     <item
-        android:id="@+id/action_about"
-        android:title="2"
+        android:id="@+id/action_night"
+        android:title="@string/action_day_night"
         android:icon="@android:drawable/ic_menu_view"
         android:orderInCategory="100"
+        android:checkable="true"
         app:showAsAction="never"/>
     <item
         android:id="@+id/send"

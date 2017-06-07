@@ -2,12 +2,14 @@ package com.dalingge.awesome.activity;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Build;
-import android.support.v4.app.*;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.util.Pair;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.ShareActionProvider;
@@ -22,9 +24,10 @@ import com.dalingge.awesome.activity.onboarder.SolidBackgroundExampleActivity;
 import com.dalingge.awesome.activityoptions.activity.MainOptionsActivity;
 import com.dalingge.awesome.adapter.MainAdapter;
 import com.dalingge.awesome.transitionseverywhere.MainTransitionsActivity;
-import com.dalingge.awesome.widget.CartActionProvider;
+import com.dalingge.awesome.utils.PreferencesUtils;
 
 import butterknife.BindView;
+
 
 public class MainActivity extends BaseActivity {
 
@@ -149,13 +152,26 @@ public class MainActivity extends BaseActivity {
     }
 
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        int uiMode = getResources().getConfiguration().uiMode;
+        int dayNightUiMode = uiMode & Configuration.UI_MODE_NIGHT_MASK;
+        if (dayNightUiMode == Configuration.UI_MODE_NIGHT_NO) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        } else if (dayNightUiMode == Configuration.UI_MODE_NIGHT_YES) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO);
+        }
+    }
     ShareActionProvider shareProvider;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.cart_menu, menu);
-        MenuItem item = menu.findItem(R.id.cart);
-        CartActionProvider cartActionProvider = (CartActionProvider) MenuItemCompat.getActionProvider(item);
+//        MenuItem item = menu.findItem(R.id.cart);
+//        CartActionProvider cartActionProvider = (CartActionProvider) MenuItemCompat.getActionProvider(item);
 
 //        shareProvider = (ShareActionProvider) MenuItemCompat
 //                .getActionProvider(menu.findItem(R.id.menu_item_share_provider));
@@ -167,8 +183,14 @@ public class MainActivity extends BaseActivity {
 //        shareProvider
 //                .setShareHistoryFileName(ShareActionProvider.DEFAULT_SHARE_HISTORY_FILE_NAME);
 //        shareProvider.setShareIntent(createShareIntent());
-
+        MenuItem item = menu.findItem(R.id.action_night);
+        initNotifiableItemState(item);
         return super.onCreateOptionsMenu(menu);
+    }
+
+    private void initNotifiableItemState(MenuItem item) {
+        PreferencesUtils preferencesUtils = new PreferencesUtils(this);
+        item.setChecked(preferencesUtils.getBoolean(R.string.action_day_night, false));
     }
 
     @Override
@@ -180,9 +202,23 @@ public class MainActivity extends BaseActivity {
                 intent.putExtra("title", "FragmentActivity");
                 startActivity(intent);
                 break;
+            case R.id.action_night:
+                PreferencesUtils preferencesUtils = new PreferencesUtils(this);
+                if (item.isChecked()) {
+                    getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                    preferencesUtils.saveBoolean(R.string.action_day_night, false);
+                } else {
+                    getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                    preferencesUtils.saveBoolean(R.string.action_day_night, true);
+                }
+                getWindow().setWindowAnimations(R.style.WindowAnimationFadeInOut);
+                recreate();
+                break;
+
         }
         return super.onOptionsItemSelected(item);
     }
+
 
     /**
      * @return The sharing intent.
