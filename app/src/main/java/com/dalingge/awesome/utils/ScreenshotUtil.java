@@ -24,20 +24,13 @@ public class ScreenshotUtil {
 
     private final static String FILE_SAVEPATH = Environment
             .getExternalStorageDirectory().getAbsolutePath() ;
-    public static String pathfile = FILE_SAVEPATH + "/ScreenshotUtil.png";
-   // public static int h = 0;
+    private static String pathfile = FILE_SAVEPATH + "/ScreenshotUtil.png";
 
     /**
      * 因为课表是可以滑动 的所以截取
      * 截取scrollview的屏幕
      **/
     public static void getBitmapByView(Context mContext, final ViewGroup viewGroup) {
-        // 获取listView实际高度
-//        h = 0;
-//        for (int i = 0; i < scrollView.getChildCount(); i++) {
-//            h += scrollView.getChildAt(i).getHeight();
-//            scrollView.getChildAt(i).setBackgroundResource(android.R.color.white);
-//        }
         // 创建对应大小的bitmap
         Bitmap bitmap = Bitmap.createBitmap(viewGroup.getWidth(), viewGroup.getHeight(), Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmap);
