@@ -1,5 +1,8 @@
 # awesome-android-ui
 
+## 2017年6月25日
+
+### 截屏合并图片ScreenshotUtil
 
 ## 2017年6月7日
 

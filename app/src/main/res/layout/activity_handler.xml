@@ -4,7 +4,8 @@
     android:id="@+id/coordrinator_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="true"
+    android:background="@color/bb_inActiveBottomBarItemColor">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -43,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_gravity="center"
-            app:nts_active_color="#fff"
+            app:nts_active_color="#fff342"
             app:nts_color="#ff1748"
             app:nts_corners_radius="1.5dp"
             app:nts_factor="2.8"
@@ -125,5 +126,11 @@
                 android:progressDrawable="@drawable/progress_bar_drawable" />
         </RelativeLayout>
 
+        <Button
+            android:id="@+id/btn_dialog_bottom_sheet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="open"/>
     </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>

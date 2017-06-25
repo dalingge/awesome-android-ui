@@ -3,21 +3,18 @@ package com.dalingge.awesome.activity;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Message;
+import android.support.design.widget.BottomSheetDialog;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TabLayout;
-import android.support.v4.util.LongSparseArray;
-import android.support.v4.util.SimpleArrayMap;
-import android.support.v4.util.SparseArrayCompat;
 import android.util.Log;
-import android.util.SparseArray;
-import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.dalingge.awesome.R;
-
-import java.util.HashMap;
+import com.dalingge.awesome.utils.ScreenshotUtil;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -26,12 +23,15 @@ import static com.dalingge.awesome.R.id.tab;
 
 public class HandlerActivity extends BaseActivity implements View.OnClickListener {
 
+    @BindView(R.id.coordrinator_layout)
+    CoordinatorLayout coordrinatorLayout;
     @BindView(R.id.start)
     Button start;
     @BindView(R.id.stop)
     Button stop;
     @BindView(tab)
     TabLayout tabLayout;
+
     private Handler mainHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -40,7 +40,7 @@ public class HandlerActivity extends BaseActivity implements View.OnClickListene
         }
     };
     private Handler threadHandler;
-
+    private BottomSheetDialog bottomSheetDialog;
     @Override
     protected boolean isBack() {
         return true;
@@ -63,12 +63,12 @@ public class HandlerActivity extends BaseActivity implements View.OnClickListene
             }
         };
 
-        HashMap hashMap = new HashMap();
-        SimpleArrayMap sam = new SimpleArrayMap();
-        SparseBooleanArray sparseBooleanArray = new SparseBooleanArray();
-        SparseArray sparseArray = new SparseArray();
-        SparseArrayCompat sparseArrayCompat = new SparseArrayCompat();
-        LongSparseArray longSparseArray = new LongSparseArray();
+//        HashMap hashMap = new HashMap();
+//        SimpleArrayMap sam = new SimpleArrayMap();
+//        SparseBooleanArray sparseBooleanArray = new SparseBooleanArray();
+//        SparseArray sparseArray = new SparseArray();
+//        SparseArrayCompat sparseArrayCompat = new SparseArrayCompat();
+//        LongSparseArray longSparseArray = new LongSparseArray();
 
 //        tab.addTab(tab.newTab().setCustomView(R.layout.item_tab));
 //        tab.addTab(tab.newTab().setText("主贴"));
@@ -115,7 +115,7 @@ public class HandlerActivity extends BaseActivity implements View.OnClickListene
     }
 
     @Override
-    @OnClick({R.id.start, R.id.stop})
+    @OnClick({R.id.start, R.id.stop,R.id.btn_dialog_bottom_sheet})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.start:
@@ -125,8 +125,38 @@ public class HandlerActivity extends BaseActivity implements View.OnClickListene
                 mainHandler.removeMessages(1);
                 threadHandler.removeMessages(1);
                 break;
+            case R.id.btn_dialog_bottom_sheet:
+                ScreenshotUtil.getBitmapByView(v.getContext(),coordrinatorLayout);
+               // setMargins(coordrinatorLayout,150,0,150,400);
+//                bottomSheetDialog = new BottomSheetDialog(v.getContext());
+//                bottomSheetDialog.setContentView(R.layout.dialog_bottom_sheet);
+//                View bottomSheet = bottomSheetDialog.findViewById(R.id.bottom_sheet);
+//                final BottomSheetBehavior bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
+//                bottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
+//                    @Override
+//                    public void onStateChanged(@NonNull View bottomSheet, int newState) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onSlide(@NonNull View bottomSheet, float slideOffset) {
+//                        setMargins(coordrinatorLayout,10,10,10,bottomSheet.getHeight());
+//                    }
+//                });
+//                bottomSheetDialog.show();
+
+                break;
             default:
                 break;
+        }
+    }
+
+
+    public static void setMargins (View v, int l, int t, int r, int b) {
+        if (v.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
+            ViewGroup.MarginLayoutParams p = (ViewGroup.MarginLayoutParams) v.getLayoutParams();
+            p.setMargins(l, t, r, b);
+            v.requestLayout();
         }
     }
 
